@@ -1,0 +1,131 @@
+@media print {
+    #pdfBtn {
+        display: none;
+    }
+    .page-break {
+        page-break-before: always; /* oppure after */
+        break-before: page;        /* più moderno, compatibile con molti browser */
+    }
+
+    /* Puoi anche nascondere elementi come pulsanti */
+    .no-print {
+        display: none !important;
+    }
+}
+
+table.sottotabella{
+    border-style: dashed;
+    color: black;
+}
+
+
+table{
+    border-collapse: collapse;
+    border-style: solid;
+    color: black;
+    border-width: 1px;
+    margin: auto;
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+
+}
+nav{
+    background-color: #ffffff;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+div.crediti{
+    height: 40px;
+    background-color: #50748c;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+
+}
+p.crediti{
+    margin: 0px;
+    color: white;
+}
+
+table.intestazione{
+    margin: auto;
+    border: black;
+    border-width: thick;
+}
+td{
+    color: #455B71;
+}
+
+img.logo{
+    background-color: #ffffff;
+}
+.logo img {
+    height: 72px;
+    margin: auto;
+}
+.logoIntestazione img {
+    height: 70px;
+    margin: auto;
+}
+
+div.logo{
+    padding-left: 25px;
+}
+
+
+main{
+    font-family: sans-serif;
+    text-align: center;
+    color: #455B71;
+}
+
+button{
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #455B71;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Effetto hover di ombra */
+button:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.35);
+}
+
+/* colore più chiaro quando premuto */
+button:active {
+    background-color: #5d7690;
+    transform: translateY(2px); /* click visivo */
+}
+
+.tabella-con-righe tr {
+      border-style: solid;
+      color: black;
+      border-width: 1px;
+      margin: auto;
+  }
+
+.tabella-con-righe-e-colonne td {
+      border-style: solid;
+      border-width: 1px;
+      margin: auto;
+  }  
+
+footer{
+
+}
