@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modello PDP BES NAI</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional: Keep original styles if needed -->
+    <link rel="stylesheet" href="./../stili/styles.css">
+    <style>
+        /* Custom styles to maintain original look where needed */
+        .page-break {
+            page-break-after: always;
+            border-top: 3px double #8c8b8b;
+            height: 0;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .logoIntestazione img {
+            max-height: 60px;
+        }
+        .crediti {
+            text-align: center;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #2c3e50;
+        }
+        .table > :not(caption) > * > * {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        .form-control-sm {
+            min-width: 150px;
+            display: inline-block;
+        }
+        .signature-line {
+            border-bottom: 1px solid #000;
+            width: 100%;
+            display: inline-block;
+            margin: 0.5rem 0;
+        }
+        .line {
+            border-top: 1px solid #000;
+            margin: 1rem 0;
+        }
+        .double-line {
+            border-top: 3px double #000;
+            margin: 1.5rem 0;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .form-control {
+            display: inline-block;
+            width: auto;
+        }
+        /* Fix for image responsiveness */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        /* Print-specific styles to prevent overflow */
+        @media print {
+            .no-print {
+                display: none;
+            }
+            body {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            table {
+                page-break-inside: avoid;
+            }
+            .table-responsive {
+                overflow: visible !important;
+                width: 100% !important;
+            }
+            .table-responsive > .table {
+                min-width: 100% !important;
+            }
+            /* Ensure no horizontal overflow in print */
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden !important;
+            }
+            .container {
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 0 !important;
+            }
+            /* Override fixed widths for print */
+            table[width] {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            td[width], th[width] {
+                width: auto !important;
+                min-width: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="crediti">
+        <p class="crediti">Matteo Maruccia</p>
+    </div>
+
+    <header class="container py-4">
+        <div class="text-center">
+            <table class="table table-borderless mx-auto">
+                <tr>
+                    <td class="text-end">
+                        <!-- Empty cell as in original -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="table table-bordered mx-auto" style="max-width: 100%;">
+                            <tr>
+                                <td class="pe-0">
+                                    <div class="logoIntestazione">
+                                        <a href="https://itisravenna.edu.it/"><img src="../pagine/ImmaginiIntestazione/logo_itis.png" alt="Logo itis ravenna" class="logoIntestazione img-fluid"></a>
+                                    </div>
+                                </td>
+                                <td class="text-center py-3">
+                                    <h4><b>ISTITUTO TECNICO INDUSTRIALE STATALE “NULLO BALDINI”</b></h4>
+                                    <p>Via Marconi, 2 – 48124 RAVENNA – Tel. 0544/404002 – Fax 0544/406056</p>
+                                    <p>Codice Fiscale: 80011270396 – Codice Fatturazione Elettronica: UFA662</p>
+                                    <p>
+                                        E-mail: <a href="mailto:ratf01000t@istruzione.it">ratf01000t@istruzione.it</a>, PEC: <a href="mailto:ratf01000t@pec.istruzione.it">ratf01000t@pec.istruzione.it</a>
+                                        WEB: <a href="http://www.itisravenna.edu.it">http://www.itisravenna.edu.it</a>
+                                    </p>
+                                </td>
+                                <td class="ps-0">
+                                    <div class="logoIntestazione">
+                                        <img src="../pagine/ImmaginiIntestazione/Stato.png" alt="Logo stato" class="logoIntestazione img-fluid">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </header>
+
+    <main class="container mx-auto">
+        <h1 class="text-center mb-4">PIANO DIDATTICO PERSONALIZZATO</h1>
+        <h2 class="text-center mb-4">(DSA Legge 170/2010 – BES Dir.Min. 27/12/2012, C.M. del 06/03/2013)</h2>
+        <h1 class="text-center mb-2">NAI</h1>
+        <h4 class="text-center mb-5"><b>Alunni Neo Arrivati in Italia</b></h4>
+
+        <!-- Student Info Section -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h3>ALUNNO/A <span class="signature-line"></span></h3>
+            </div>
+            <div class="col-md-6">
+                <h3>Classe _____________</h3>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-12">
+                <h3><b>Anno Scolastico ______________</b></h3>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- Personal Data Section -->
+        <p style="text-align: center; line-height: 100%; margin-bottom: 0cm"><b>PIANO DIDATTICO PERSONALIZZATO di </b><u><b></b></u><b> CLASSE A.S. ______________</b></p>
+        <p style="line-height: 100%; margin-bottom: 0cm"><br></p>
+        <p style="line-height: 100%; margin-bottom: 0cm"><b>PER ALLIEVI STRANIERI (da compilare a cura dei coordinatori)</b></p>
+        <p align="center" style="line-height: 100%; margin-bottom: 0cm"><br></p>
+        <p align="justify" style="line-height: 100%; margin-bottom: 0cm"><br></p>
+
+        <table class="table table-bordered">
+            <tr valign="top">
+                <td style="background: transparent; border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0cm">
+                    <p><br></p>
+                </td>
+                <td style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0.19cm">
+                    <p><br></p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="background: transparent; border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0cm" height="15">
+                    <p style="margin-bottom: 0cm">
+                        <font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Data e luogo di nascita. </b></font></font>
+                    </p>
+                    <p><font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Classe frequentata.</b></font></font></p>
+                </td>
+                <td style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0.19cm" height="15">
+                    <p><br></p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="background: transparent; border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0cm" height="26">
+                    <p>
+                        <font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Da quanti anni è in Italia</b></font></font>
+                    </p>
+                </td>
+                <td style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0.19cm" height="26">
+                    <p><br></p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="background: transparent; border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0cm" height="27">
+                    <p>
+                        <font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Eventuali Informazioni dalla famiglia </b></font></font>
+                    </p>
+                </td>
+                <td style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0.19cm" height="27">
+                    <p><br></p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="background: transparent; border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0cm" height="21">
+                    <p>
+                        <font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Caratteristiche percorso didattico pregresso ( se in possesso)</b></font></font>
+                    </p>
+                </td>
+                <td style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0.19cm" height="21">
+                    <p><br></p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="background: transparent; border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0cm" height="15">
+                    <p>
+                        <font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Altre osservazioni  </b></font></font>
+                    </p>
+                </td>
+                <td style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0.19cm" height="15">
+                    <p><br></p>
+                </td>
+            </tr>
+        </table>
+
+        <p align="justify" style="line-height: 100%; margin-bottom: 0cm"><br></p>
+
+        <!-- Section 1: DESCRIZIONI DEL FUNZIONAMENTO DELLE ABILITÀ STRUMENTALI -->
+        <ol>
+            <li>
+                <p style="line-height: 100%; margin-bottom: 0.42cm"><font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>DESCRIZIONI DEL FUNZIONAMENTO DELLE ABILITÀ STRUMENTALI</b></font></font></p>
+            </li>
+        </ol>
+        <dl><dd>
+            <table class="table table-bordered">
+                <tr valign="top">
+                    <td rowspan="2" style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.18cm; padding-right: 0.19cm">
+                        <p style="margin-bottom: 0cm">
+                            <font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>LETTURA </b></u></font></font>
+                        </p>
+                        <p style="margin-bottom: 0cm"><u> </u><font face="Arial, serif"><font size="2" style="font-size: 10pt"><i><u>(</u></i></font></font><font face="Arial, serif"><font size="2" style="font-size: 10pt"><i><u><b>velocità, correttezza, comprensione</b></u></i></font></font><font face="Arial, serif"><font size="2" style="font-size: 10pt"><i><u>)</u></i></font></font>
+                        </p>
+                        <p><br></p>
+                    </td>
+                    <td style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.18cm; padding-right: 0.19cm">
+                        <p align="center">
+                            <font face="Arial, serif"><font size="2" style="font-size: 10pt">Osservazione docenti</font></font>
+                        </p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.18cm; padding-right: 0.19cm">
+                        <p align="center"><br></p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td rowspan="2" style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.18cm; padding-right: 0.19cm">
+                        <p style="margin-bottom: 0cm">
+                            <font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>SCRITTURA </b></font></font>
+                        </p>
+                        <p><font face="Arial, serif"><font size="2" style="font-size: 10pt"><i>(tipologia di errori, grafia, produzione testi: ideazione, stesura, revisione)</i></font></font></p>
+                    </td>
+                    <td style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.18cm; padding-right: 0.19cm">
+                        <p align="center">
+                            <font face="Arial, serif"><font size="2" style="font-size: 10pt">Osservazione docenti</font></font>
+                        </p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.18cm; padding-right: 0.19cm">
+                        <p align="center"><br></p>
+                    </td>
+                </tr>
+            </table>
+        </dd></dl>
+
+        <p style="line-height: 100%; margin-bottom: 0.42cm"><br><br></p>
+
+        <!-- Section 2: CARATTERISTICHE COMPORTAMENTALI -->
+        <ol start="2">
+            <li>
+                <p style="line-height: 100%; margin-bottom: 0.42cm"><font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>CARATTERISTICHE COMPORTAMENTALI </b></font></font><font face="Arial, serif"><font size="2" style="font-size: 10pt">(specificare)</font></font></p>
+            </li>
+        </ol>
+        <ul>
+            <li>
+                <p style="line-height: 100%; margin-bottom: 0cm"><font face="Arial, serif"><font size="2" style="font-size: 10pt">Collaborazione e partecipazione1 </font></font></p>
+            </li>
+        </ul>
+        <p style="line-height: 100%; margin-left: 2.5cm; margin-bottom: 0cm"><br></p>
+        <ul>
+            <li>
+                <p style="line-height: 100%; margin-bottom: 0cm"><font face="Arial, serif"><font size="2" style="font-size: 10pt">Relazionalità con compagni/adulti 2 </font></font></p>
+            </li>
+        </ul>
+        <p style="line-height: 100%; margin-left: 2.54cm; margin-bottom: 0cm"><br></p>
+        <ul>
+            <li>
+                <p style="line-height: 100%; margin-bottom: 0cm"><font face="Arial, serif"><font size="2" style="font-size: 10pt">Frequenza scolastica </font></font></p>
+            </li>
+        </ul
+
+<tool_call>
+<function=Write>
+<parameter=content>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modello PDP BES NAI</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional: Keep original styles if needed -->
+    <link rel="stylesheet" href="./../stili/styles.css">
+    <style>
+        /* Custom styles to maintain original look where needed */
+        .page-break {
+            page-break-after: always;
+            border-top: 3px double #8c8b8b;
+            height: 0;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .logoIntestazione img {
+            max-height: 60px;
+        }
+        .crediti {
+            text-align: center;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #2c3e50;
+        }
+        .table > :not(caption) > * > * {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        .form-control-sm {
+            min-width: 150px;
+            display: inline-block;
+        }
+        .signature-line {
+            border-bottom: 1px solid #000;
+            width: 100%;
+            display: inline-block;
+            margin: 0.5rem 0;
+        }
+        .line {
+            border-top: 1px solid #000;
+            margin: 1rem 0;
+        }
+        .double-line {
+            border-top: 3px double #000;
+            margin: 1.5rem 0;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .form-control {
+            display: inline-block;
+            width: auto;
+        }
+        /* Fix for image responsiveness */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        /* Print-specific styles to prevent overflow */
+        @media print {
+            .no-print {
+                display: none;
+            }
+            body {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            table {
+                page-break-inside: avoid;
+            }
+            .table-responsive {
+                overflow: visible !important;
+                width: 100% !important;
+            }
+            .table-responsive > .table {
+                min-width: 100% !important;
+            }
+            /* Ensure no horizontal overflow in print */
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden !important;
+            }
+            .container {
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 0 !important;
+            }
+            /* Override fixed widths for print */
+            table[width] {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            td[width], th[width] {
+                width: auto !important;
+                min-width: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="crediti">
+        <p class="crediti">Matteo Maruccia</p>
+    </div>
+
+    <header class="container py-4">
+        <div class="text-center">
+            <table class="table table-borderless mx-auto">
+                <tr>
+                    <td class="text-end">
+                        <!-- Empty cell as in original -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="table table-bordered mx-auto" style="max-width: 100%;">
+                            <tr>
+                                <td class="pe-0">
+                                    <div class="logoIntestazione">
+                                        <a href="https://itisravenna.edu.it/"><img src="../pagine/ImmaginiIntestazione/logo_itis.png" alt="Logo itis ravenna" class="logoIntestazione img-fluid"></a>
+                                    </div>
+                                </td>
+                                <td class="text-center py-3">
+                                    <h4><b>ISTITUTO TECNICO INDUSTRIALE STATALE “NULLO BALDINI”</b></h4>
+                                    <p>Via Marconi, 2 – 48124 RAVENNA – Tel. 0544/404002 – Fax 0544/406056</p>
+                                    <p>Codice Fiscale: 80011270396 – Codice Fatturazione Elettronica: UFA662</p>
+                                    <p>
+                                        E-mail: <a href="mailto:ratf01000t@istruzione.it">ratf01000t@istruzione.it</a>, PEC: <a href="mailto:ratf01000t@pec.istruzione.it">ratf01000t@pec.istruzione.it</a>
+                                        WEB: <a href="http://www.itisravenna.edu.it">http://www.itisravenna.edu.it</a>
+                                    </p>
+                                </td>
+                                <td class="ps-0">
+                                    <div class="logoIntestazione">
+                                        <img src="../pagine/ImmaginiIntestazione/Stato.png" alt="Logo stato" class="logoIntestazione img-fluid">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </header>
+
+    <main class="container mx-auto">
+        <h1 class="text-center mb-4">PIANO DIDATTICO PERSONALIZZATO</h1>
+        <h2 class="text-center mb-4">(DSA Legge 170/2010 – BES Dir.Min. 27/12/2012, C.M. del 06/03/2013)</h2>
+        <h1 class="text-center mb-2">NAI</h1>
+        <h4 class="text-center mb-5"><b>Alunni Neo Arrivati in Italia</b></h4>
+
+        <!-- Student Info Section -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h3>ALUNNO/A <span class="signature-line"></span></h3>
+            </div>
+            <div class="col-md-6">
+                <h3>Classe _____________</h3>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-12">
+                <h3><b>Anno Scolastico ______________</b></h3>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- Personal Data Section -->
+        <p style="text-align: center; line-height: 100%; margin-bottom: 0cm"><b>PIANO DIDATTICO PERSONALIZZATO di </b><u><b></b></u><b> CLASSE A.S. ______________</b></p>
+        <p style="line-height: 100%; margin-bottom: 0cm"><br></p>
+        <p style="line-height: 100%; margin-bottom: 0cm"><b>PER ALLIEVI STRANIERI (da compilare a cura dei coordinatori)</b></p>
+        <p align="center" style="line-height: 100%; margin-bottom: 0cm"><br></p>
+        <p align="justify" style="line-height: 100%; margin-bottom: 0cm"><br></p>
+
+        <table class="table table-bordered">
+            <tr valign="top">
+                <td style="background: transparent; border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0cm">
+                    <p><br></p>
+                </td>
+                <td style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0.19cm">
+                    <p><br></p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="background: transparent; border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0cm" height="15">
+                    <p style="margin-bottom: 0cm">
+                        <font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Data e luogo di nascita. </b></font></font>
+                    </p>
+                    <p><font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Classe frequentata.</b></font></font></p>
+                </td>
+                <td style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0.19cm" height="15">
+                    <p><br></p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="background: transparent; border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0cm" height="26">
+                    <p>
+                        <font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Da quanti anni è in Italia</b></font></font>
+                    </p>
+                </td>
+                <td style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0.19cm" height="26">
+                    <p><br></p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="background: transparent; border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0cm" height="27">
+                    <p>
+                        <font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Eventuali Informazioni dalla famiglia </b></font></font>
+                    </p>
+                </td>
+                <td style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0.19cm" height="27">
+                    <p><br></p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="background: transparent; border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0cm" height="21">
+                    <p>
+                        <font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Caratteristiche percorso didattico pregresso ( se in possesso)</b></font></font>
+                    </p>
+                </td>
+                <td style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0.19cm" height="21">
+                    <p><br></p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="background: transparent; border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0cm" height="15">
+                    <p>
+                        <font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Altre osservazioni  </b></font></font>
+                    </p>
+                </td>
+                <td style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.17cm; padding-right: 0.19cm" height="15">
+                    <p><br></p>
+                </td>
+            </tr>
+        </table>
+
+        <p align="justify" style="line-height: 100%; margin-bottom: 0cm"><br></p>
+
+        <!-- Section 1: DESCRIZIONI DEL FUNZIONAMENTO DELLE ABILITÀ STRUMENTALI -->
+        <ol>
+            <li>
+                <p style="line-height: 100%; margin-bottom: 0.42cm"><font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>DESCRIZIONI DEL FUNZIONAMENTO DELLE ABILITÀ STRUMENTALI</b></font></font></p>
+            </li>
+        </ol>
+        <dl><dd>
+            <table class="table table-bordered">
+                <tr valign="top">
+                    <td rowspan="2" style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.18cm; padding-right: 0.19cm">
+                        <p style="margin-bottom: 0cm">
+                            <font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>LETTURA </b></u></font></font>
+                        </p>
+                        <p style="margin-bottom: 0cm"><u> </u><font face="Arial, serif"><font size="2" style="font-size: 10pt"><i><u>(</u></i></font></font><font face="Arial, serif"><font size="2" style="font-size: 10pt"><i><u><b>velocità, correttezza, comprensione</b></u></i></font></font><font face="Arial, serif"><font size="2" style="font-size: 10pt"><i><u>)</u></i></font></font>
+                        </p>
+                        <p><br></p>
+                    </td>
+                    <td style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.18cm; padding-right: 0.19cm">
+                        <p align="center">
+                            <font face="Arial, serif"><font size="2" style="font-size: 10pt">Osservazione docenti</font></font>
+                        </p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.18cm; padding-right: 0.19cm">
+                        <p align="center"><br></p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td rowspan="2" style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.18cm; padding-right: 0.19cm">
+                        <p style="margin-bottom: 0cm">
+                            <font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>SCRITTURA </b></font></font>
+                        </p>
+                        <p><font face="Arial, serif"><font size="2" style="font-size: 10pt"><i>(tipologia di errori, grafia, produzione testi: ideazione, stesura, revisione)</i></font></font></p>
+                    </td>
+                    <td style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.18cm; padding-right: 0.19cm">
+                        <p align="center">
+                            <font face="Arial, serif"><font size="2" style="font-size: 10pt">Osservazione docenti</font></font>
+                        </p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="background: transparent; border: 1px solid #000001; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.18cm; padding-right: 0.19cm">
+                        <p align="center"><br></p>
+                    </td>
+                </tr
