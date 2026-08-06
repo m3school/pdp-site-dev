@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modello PDP CDC</title>
+    <link rel="stylesheet" href="./../stili/styles.css">
+</head>
+
+<body>
+<div class="crediti">
+    <p class="crediti">Matteo Maruccia</p>
+</div>
+
+<main>
+    <h1>Le osservazioni del Consiglio di classe</h1>
+    <h2>(indicare le caratteristiche presenti):</h2>
+    <br>
+
+    <h1 id="titolo-nome">
+        Nome e Cognome alunno : <input id="nome-alunno" type="text">
+    </h1>
+
+    <br>
+    <h2><u>Partecipazione dell’alunno alle attività didattiche</u></h2>
+    <ul>si distrae molto facilmente e necessita di continue sollecitazioni<input type="checkbox"></ul>
+    <ul>partecipa solo se coinvolto direttamente<input type="checkbox"></ul>
+    <ul>partecipa ed interviene in maniera adeguata<input type="checkbox"></ul>
+
+    <h2><u>Relazionalità con compagni/adulti</u></h2>
+    <ul>ha difficoltà a relazionarsi<input type="checkbox"></ul>
+    <ul>predilige relazionarsi con i pari solo in piccolo gruppo<input type="checkbox"></ul>
+    <ul>predilige relazionarsi solo con i docenti<input type="checkbox"></ul>
+    <ul>riesce a relazionarsi senza difficoltà<input type="checkbox"></ul>
+
+    <h2><u>Modalità di gestione delle consegne</u></h2>
+    <ul>ricorre all’insegnante per spiegazioni<input type="checkbox"></ul>
+    <ul>ricorre ad un compagno<input type="checkbox"></ul>
+    <ul>è autonomo<input type="checkbox"></ul>
+
+    <h2><u>Capacità di memorizzare procedure operative</u></h2>
+    <ul>ha notevoli difficoltà nella memorizzazione<input type="checkbox"></ul>
+
+    <ul>ha difficoltà solo in alcune materie (specificare quali):
+        <input type="text" class="toggle-input" data-target="input-materie" disabled>
+        <input type="checkbox" class="cb-toggle" data-target="input-materie">
+    </ul>
+
+    <ul>utilizza prevalentemente la memoria visiva<input type="checkbox"></ul>
+    <ul>memorizza con facilità<input type="checkbox"></ul>
+
+    <button id="pdfBtn" onclick="scaricaPDF()">Scarica o stampa PDF</button>
+
+</main>
+
+<footer></footer>
+<script src="./../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+document.addEventListener("DOMContentLoaded", () => {
+
+    // --- FUNZIONE UNICA: checkbox che abilita/disabilita input associati ---
+    document.querySelectorAll(".cb-toggle").forEach(checkbox => {
+
+        checkbox.addEventListener("change", () => {
+            const target = checkbox.dataset.target;
+
+            document
+                .querySelectorAll(`.toggle-input[data-target="${target}"]`)
+                .forEach(input => {
+                    input.disabled = !checkbox.checked;
+                });
+        });
+
+    });
+
+    // --- CONVERSIONE INPUT IN SPAN PER DESKTOP (INVIO) E MOBILE (perdita fuoco) ---
+    let lastTextInput = null;
+
+    // Funzione di conversione condivisa
+    const convertInputToSpan = (input) => {
+        const testo = input.value.trim();
+        if (testo === "") return;
+        const span = document.createElement("span");
+        span.textContent = testo;
+        span.style.fontWeight = "bold";
+        span.style.cursor = "pointer";
+
+        // clic per tornare in modifica
+        span.addEventListener("click", () => {
+            span.replaceWith(input);
+            input.value = span.textContent;
+            input.focus();
+        });
+
+        input.replaceWith(span);
+    };
+
+    // Traccia l'ultimo input testuale messo a fuoco
+    document.querySelectorAll("input[type='text']").forEach(input => {
+        input.addEventListener("focus", () => {
+            // Se si sposta su un nuovo input, converte quello precedente (se ha testo)
+            if (lastTextInput && lastTextInput !== input && lastTextInput.value.trim() !== "") {
+                // Converte solo se ancora è un input (non ancora trasformato)
+                if (lastTextInput.tagName === "INPUT") {
+                    convertInputToSpan(lastTextInput);
+                }
+            }
+            lastTextInput = input;
+        });
+
+        // Fallback per blur (es. toccare fuori dalla tastiera)
+        input.addEventListener("blur", () => {
+            setTimeout(() => {
+                // Se l'input non è più attivo e è ancora l'ultimo tracciato, converti
+                if (document.activeElement !== input && lastTextInput === input && input.tagName === "INPUT" && input.value.trim() !== "") {
+                    convertInputToSpan(input);
+                }
+            }, 150); // piccolo ritardo per permettere il passaggio rapido a un altro input
+        });
+    });
+
+    // --- TRASFORMA TUTTI GLI INPUT TESTUALI IN TESTO QUANDO PREMI INVIO (desktop) ---
+    document.addEventListener("keydown", function(e) {
+
+        if (e.target.matches("input[type='text']") && e.key === "Enter") {
+            e.preventDefault();
+
+            const input = e.target;
+            const testo = input.value.trim();
+            if (testo === "") return;
+
+            convertInputToSpan(input);
+        }
+
+    });
+
+});
+
+// --- FUNZIONE GENERALE DOWNLOAD PDF (bottone nascosto dalla stampa) ---
+function scaricaPDF() {
+    window.print();
+}

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modello PDP BES NAI</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional: Keep original styles if needed -->
+    <link rel="stylesheet" href="./../stili/styles.css">
+    <style>
+        /* Custom styles to maintain original look where needed */
+        .toggle-input {
+            width: 200px;
+            margin-top: 5px;
+            display: inline-block;
+        }
+        .cb-toggle:checked + .toggle-input {
+            display: inline-block !important;
+        }
+        .cb-toggle:not(:checked) + .toggle-input {
+            display: none;
+        }
+        .table-responsive {
+            margin-bottom: 1rem;
+        }
+        .checkbox-input {
+            width: 1rem;
+            height: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="crediti">
+        <p class="crediti">Matteo Maruccia</p>
+    </div>
+
+    <header class="container">
+        <div class="text-center">
+            <table class="table table-borderless mx-auto w-100">
+                <tr>
+                    <td class="text-end">
+                        <p>Allegato n.4</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="table table-bordered mx-auto w-100" style="max-height: 200px;">
+                            <tr>
+                                <td class="pe-0">
+                                    <div class="logoIntestazione">
+                                        <a href="https://itisravenna.edu.it/"><img src="../pagine/ImmaginiIntestazione/logo_itis.png" alt="Logo itis ravenna" class="logoIntestazione"></a>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <h4><b>ISTITUTO TECNICO INDUSTRIALE STATALE “NULLO BALDINI”</b></h4>
+                                    <p>Via Marconi, 2 – 48124 RAVENNA – Tel. 0544/404002 – Fax 0544/406056</p>
+                                    <p>Codice Fiscale: 80011270396 – Codice Fatturazione Elettronica: UFA662</p>
+                                    <p>
+                                        E-mail: <a href="ratf01000t@istruzione.it">ratf01000t@istruzione.it</a>, PEC: <a href="ratf01000t@pec.istruzione.it">ratf01000t@pec.istruzione.it</a>
+                                        WEB: <a href="http://www.itisravenna.edu.it">http://www.itisravenna.edu.it</a>
+                                    </p>
+                                </td>
+                                <td class="ps-0">
+                                    <div class="logoIntestazione">
+                                        <img src="../pagine/ImmaginiIntestazione/Stato.png" alt="Logo stato" class="logoIntestazione">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </header>
+
+    <main class="container mx-auto">
+
+        <h1 class="text-center mb-2">PIANO DIDATTICO PERSONALIZZATO</h1>
+        <h2 class="text-center mb-2">(DSA Legge 170/2010 – BES Dir.Min. 27/12/2012, C.M. del 06/03/2013)</h2>
+        <h1 class="text-center mb-2">NAI</h1>
+        <h4 class="text-center mb-5">Alunni Neo Arrivati in Italia</h4>
+
+        <div class="row mb-4">
+            <div class="col">
+                <h3 id="titolo-nome">Nome e Cognome alunno : <input id="nome-alunno" type="text" class="form-control form-control-sm mx-auto"></h3>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col">
+                <h3 id="titolo-classe">Classe : <input id="classe-alunno" type="text" class="form-control form-control-sm mx-auto"></h3>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-12">
+                <h3 id="titolo-annoScolastico">Anno scolastico : <input id="annoScolastico" type="text" class="form-control form-control-sm mx-auto"></h3>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <h4 class="text-center mb-2" id="pdp-nome-intestazione">
+            PIANO DIDATTICO PERSONALIZZATO di
+            <input id="pdp-nome-intestazione-alunno" type="text" class="form-control form-control-sm d-inline-block w-auto">
+            CLASSE
+            <input id="pdp-nome-intestazione-classe" type="text" class="form-control form-control-sm d-inline-block w-auto">
+            A.S.
+            <input id="pdp-nome-intestazione-as" type="text" class="form-control form-control-sm d-inline-block w-auto">
+        </h4>
+        <br>
+        <h4 class="text-center mb-4">PER ALLIEVI STRANIERI (<u>da compilare a cura dei coordinatori</u>)</h4>
+
+        <div class="table-responsive mb-4">
+            <table class="table table-bordered w-100">
+                <tr>
+                    <td><p id="paragrafo-dataLN">Data e luogo di nascita <input id="input-dataLN" type="text" class="form-control form-control-sm"></p></td>
+                </tr>
+                <tr>
+                    <td><p id="paragrafo-classe">Classe frequentata <input id="input-classeFrequentata" type="text" class="form-control form-control-sm"></p></td>
+                </tr>
+                <tr>
+                    <td><p id="paragrafo-anni">Da quanti anni è in Italia? <input id="input-anniInItalia" type="text" class="form-control form-control-sm"></p></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="page-break"></div>
+
+        <ol>
+            <li>
+                <p><b>DESCRIZIONE DEL FUNZIONAMENTO DELLE ABILITÀ STRUMENTALI</b></p>
+
+                <div class="table-responsive mb-4">
+                    <table class="table table-borderless w-100">
+                        <tr>
+                            <td></td>
+                            <td><p><b>Osservazione docenti</b></p></td>
+                        </tr>
+                        <tr>
+                            <td><p id="lettura-pt1"><u><b>LETTURA</b></u> (velocità, correttezza, comprensione)</p></td>
+                            <td><input id="input-lettura-pt1" type="text" class="form-control form-control-sm"></td>
+                        </tr>
+                        <tr>
+                            <td><p id="scrittura-pt1"><u><b>SCRITTURA</b></u> (tipologia di errori, grafia, produzione testi: ideazione, stesura, revisione)</p></td>
+                            <td><input id="input-scrittura-pt1" type="text" class="form-control form-control-sm"></td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+
+            <li>
+                <p><b>CARATTERISTICHE COMPORTAMENTALI</b> (specificare)</p>
+
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered w-100">
+                        <tr>
+                            <td>Collaborazione e partecipazione</td>
+                            <td><input id="elem1-pt2" type="text" class="form-control form-control-sm"></td>
+                        </tr>
+                        <tr>
+                            <td>Relazionalità con compagni/adulti</td>
+                            <td><input id="elem2-pt2" type="text" class="form-control form-control-sm"></td>
+                        </tr>
+                        <tr>
+                            <td>Frequenza scolastica</td>
+                            <td><input id="elem3-pt2" type="text" class="form-control form-control-sm"></td>
+                        </tr>
+                        <tr>
+                            <td>Accettazione e rispetto delle regole</td>
+                            <td>
+                                Sì <input type="radio" name="regole" value="si" class="checkbox-input">
+                                No <input type="radio" name="regole" value="no" class="checkbox-input">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Motivazione al lavoro scolastico</td>
+                            <td><input id="elem4-pt2" type="text" class="form-control form-control-sm"></td>
+                        </tr>
+                        <tr>
+                            <td>Capacità organizzative</td>
+                            <td><input id="elem5-pt2" type="text" class="form-control form-control-sm"></td>
+                        </tr>
+                        <tr>
+                            <td>Rispetto degli impegni e delle responsabilità</td>
+                            <td><input id="elem6-pt2" type="text" class="form-control form-control-sm"></td>
+                        </tr>
+                        <tr>
+                            <td>Consapevolezza delle proprie difficoltà</td>
+                            <td><input id="elem7-pt2" type="text" class="form-control form-control-sm"></td>
+                        </tr>
+                        <tr>
+                            <td>Senso di autoefficacia</td>
+                            <td><input id="elem8-pt2" type="text" class="form-control form-control-sm"></td>
+                        </tr>
+                        <tr>
+                            <td>Autovalutazione delle proprie abilità e potenzialità nelle diverse discipline</td>
+                            <td><input id="elem9-pt2" type="text" class="form-control form-control-sm"></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p><b>Note</b></p>
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered w-100">
+                        <tr>
+                            <td>Partecipa agli scambi comunicativi e alle conversazioni collettive; collabora nel gruppo di lavoro scolastico,…</td>
+                            <td><input id="note-elem1-pt2" type="text" class="form-control form-control-sm"></td>
+                        </tr>
+                        <tr>
+                            <td>Sa relazionarsi, interagire,…</td>
+                            <td><input id="note-elem2-pt2" type="text" class="form-control form-control-sm"></td>
+                        </tr>
+                        <tr>
+                            <td>Sa gestire il materiale scolastico, sa organizzare un piano di lavoro,…</td>
+                            <td><input id="note-elem3-pt2" type="text" class="form-control form-control-sm"></td>
+                        </tr>
+                        <tr>
+                            <td>Parla delle sue difficoltà, le accetta, elude il problema,…</td>
+                            <td><input id="note-elem4-pt2" type="text" class="form-control form-control-sm"></td>
+                        </tr>
+                        <tr>
+                            <td>Percezione soggettiva di riuscire ad affrontare gli impegni scolastici con successo e fiducia nelle proprie possibilità di imparare</td>
+                            <td><input id="note-elem5-pt2" type="text" class="form-control form-control-sm"></td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+        </ol>
+
+        <div class="page-break"></div>
+
+        <ol start="3">
+            <li>
+                <p><b>CONTENUTI DEL PERCORSO DIDATTICO</b></p>
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered w-100">
+                        <tr>
+                            <td>
+                                <table class="table table-borderless mb-0 w-100">
+                                    <tr>
+                                        <td><p id="elem1-pt3">1. Eventuali adattamenti del piano di lavoro <input id="input-elem1-pt3" type="text" class="form-control form-control-sm"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p id="elem2-pt3">2. Livello di competenza linguistica in italiano (orale e scritto) <input id="input-elem2-pt3" type="text" class="form-control form-control-sm"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p id="elem3-pt3">3. Argomenti sostitutivi o integrativi <input id="input-elem3-pt3" type="text" class="form-control form-control-sm"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p id="elem4-pt3">4. Utilizzo di testi semplificati e/o di sussidi informatici <input id="input-elem4-pt3" type="text" class="form-control form-control-sm"></p></td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="align-middle text-center">
+                                <h5>Vedi schede disciplinari</h5>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+
+            <li>
+                <p><b>STRATEGIE UTILIZZATE DALL'ALUNNO NELLO STUDIO</b></p>
+                <p class="fst-italic">Sottolineare le strategie utilizzate o aggiungerne altre</p>
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered tabella-con-righe w-100">
+                        <tr>
+                            <td>Strategie utilizzate (sottolinea, identifica parole-chiave, costruisce schemi, tabelle o diagrammi)</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Modalità di affrontare il testo scritto (computer, schemi, correttore ortografico,…)</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Modalità di svolgimento del compito assegnato (è autonomo, necessita di azioni di supporto,…)</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Riscrittura di testi con modalità grafica diversa</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Usa strategie per ricordare (uso immagini, colori, riquadrature,…)</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>ALTRO <input type="text" class="toggle-input form-control form-control-sm" data-target="strategieAltro" disabled></td>
+                            <td><input type="checkbox" class="cb-toggle checkbox-input" data-target="strategieAltro"></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p><b>VALUTAZIONE</b> – Indicare le principali modalità di valutazione</p>
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered tabella-con-righe w-100">
+                        <tr>
+                            <td>Verifiche orali</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Verifiche scritte</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Prove con: vero/falso, scelta multipla, completamento</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Tempi più lunghi per le verifiche</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>ALTRO <input type="text" class="toggle-input form-control form-control-sm" data-target="valutazioneAltro" disabled></td>
+                            <td><input type="checkbox" class="cb-toggle checkbox-input" data-target="valutazioneAltro"></td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+
+            <li>
+                <p><b>STRUMENTI UTILIZZATI DALL'ALUNNO NELLO STUDIO</b></p>
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered tabella-con-righe w-100">
+                        <tr>
+                            <td>Strumenti informatici (libro digitale, programmi per realizzare grafici,…)</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Fotocopie adattate</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Utilizzo del PC per scrivere</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Registrazioni</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Testi con immagini</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>ALTRO <input type="text" class="toggle-input form-control form-control-sm" data-target="strumentiAltro" disabled></td>
+                            <td><input type="checkbox" class="cb-toggle checkbox-input" data-target="strumentiAltro"></td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+
+            <li>
+                <p><b>RIFLESSIONE SUI PUNTI DI FORZA RILEVATI</b></p>
+                <textarea class="form-control" rows="5"></textarea>
+            </li>
+        </ol>
+
+        <div class="page-break"></div>
+
+        <h4 class="text-center mb-4" id="pdp-nome-intestazione2">
+            PDP alunno/a
+            <input id="pdp-nome-intestazione2-alunno" type="text" class="form-control form-control-sm d-inline-block w-auto">
+            classe
+            <input id="pdp-nome-intestazione2-classe" type="text" class="form-control form-control-sm d-inline-block w-auto">
+            a.s.
+            <input id="pdp-nome-intestazione2-as" type="text" class="form-control form-control-sm d-inline-block w-auto">
+        </h4>
+
+        <p>Le parti coinvolte si impegnano a rispettare quanto condiviso e concordato, nel presente PDP, per il successo formativo dell'alunno.</p>
+        <br>
+        <p>Il presente Piano Didattico Personalizzato è stato sottoscritto per la scuola da:</p>
+        <br>
+
+        <table class="table table-bordered tabella-con-righe-e-colonne w-100 mb-4">
+            <tr>
+                <td><b>COGNOME E NOME</b></td>
+                <td><b>DISCIPLINA</b></td>
+                <td><b>FIRMA</b></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <br>
+        <p style="font-weight: bold; text-align: end; padding-right: 20px;">Il Dirigente Scolastico</p>
+        <br>
+        <p style="text-align: end; padding-right: 20px;"></p>
+        <br>
+        <p style="text-align: start; padding-left: 20px;">Documento valido per la durata di un anno approvato dal C.d.C.</p>
+        <p style="text-align: start; padding-left: 20px;">in data </p>
+        <br>
+        <p style="text-align: start; padding-left: 20px;">Consegnato alla famiglia</p>
+        <table class="w-100 mb-4" style="border: none;">
+            <tr>
+                <td style="text-align: start; padding-left: 20px;">in data </td>
+                <td style="text-align: end; padding-right: 20px;">firma del genitore</td>
+            </tr>
+        </table>
+        <br>
+        <button id="pdfBtn" onclick="scaricaPDF()" class="btn btn-primary mt-3">Scarica o stampa PDF</button>
+    </main>
+    <footer></footer>
+    <!-- Bootstrap 5 JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./../js/script.js"></script>
+</body>
+</html>

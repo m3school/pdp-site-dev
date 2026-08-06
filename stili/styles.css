@@ -1,0 +1,211 @@
+@media print {
+    #pdfBtn {
+        display: none;
+    }
+    .page-break {
+        page-break-before: always; /* oppure after */
+        break-before: page;        /* più moderno, compatibile con molti browser */
+    }
+
+    /* Puoi anche nascondere elementi come pulsanti */
+    .no-print {
+        display: none !important;
+    }
+}
+
+table.sottotabella{
+    border-style: dashed;
+    color: black;
+}
+
+
+table{
+    border-collapse: collapse;
+    border-style: solid;
+    color: black;
+    border-width: 1px;
+    margin: auto;
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+
+}
+nav{
+    background-color: #ffffff;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+div.crediti{
+    height: 40px;
+    background-color: #50748c;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+
+}
+p.crediti{
+    margin: 0px;
+    color: white;
+}
+
+table.intestazione{
+    margin: auto;
+    border: black;
+    border-width: thick;
+}
+td{
+    color: #455B71;
+}
+
+img.logo{
+    background-color: #ffffff;
+}
+.logo img {
+    height: 72px;
+    margin: auto;
+}
+.logoIntestazione img {
+    height: 70px;
+    margin: auto;
+}
+
+div.logo{
+    padding-left: 25px;
+}
+
+
+main{
+    font-family: sans-serif;
+    text-align: center;
+    color: #455B71;
+}
+
+button{
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #455B71;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Effetto hover di ombra */
+button:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.35);
+}
+
+/* colore più chiaro quando premuto */
+button:active {
+    background-color: #5d7690;
+    transform: translateY(2px); /* click visivo */
+}
+
+.tabella-con-righe tr {
+      border-style: solid;
+      color: black;
+      border-width: 1px;
+      margin: auto;
+  }
+
+.tabella-con-righe-e-colonne td {
+      border-style: solid;
+      border-width: 1px;
+      margin: auto;
+  }  
+
+footer{
+
+}
+
+/* ===== FIX OVERFLOW ORIZZONTALE ===== */
+
+/* Regola base: nessun elemento può uscire dal viewport */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* Tutti gli input testuali restano dentro il loro contenitore */
+input[type="text"] {
+    max-width: 100%;
+    width: auto;
+    min-width: 0;
+}
+
+/* Le tabelle non forzano larghezze eccessive */
+table {
+    table-layout: fixed;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Gli input dentro le celle di tabella si adattano */
+td input[type="text"],
+td input.form-control {
+    max-width: 100%;
+    width: 100%;
+}
+
+/* Gli input inline (non form-control) non sforano */
+p input[type="text"]:not(.form-control) {
+    max-width: 180px;
+    width: 100%;
+}
+
+/* Toggle input già limitati, ma forziamo il max */
+.toggle-input {
+    max-width: 100%;
+    width: 180px;
+}
+
+/* Il container principale non supera il viewport */
+.container {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Header: la tabella interna non deve sforare */
+header .table {
+    table-layout: auto;
+    word-break: break-word;
+}
+
+/* Celle con testo lungo */
+td, th {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+/* Su schermi piccoli, riduci il font delle tabelle */
+@media (max-width: 576px) {
+    table, td, th, p, li {
+        font-size: 0.85rem;
+    }
+
+    h3, h4 {
+        font-size: 1rem;
+    }
+
+    .toggle-input {
+        width: 120px;
+    }
+}

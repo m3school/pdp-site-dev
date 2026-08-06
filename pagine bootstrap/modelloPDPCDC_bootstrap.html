@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modello PDP CDC</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional: Keep original styles if needed -->
+    <link rel="stylesheet" href="./../stili/styles.css">
+    <style>
+        /* Custom styles to maintain original look where needed */
+        .toggle-input {
+            width: 200px;
+            margin-top: 5px;
+            display: inline-block;
+        }
+        .cb-toggle:checked + .toggle-input {
+            display: inline-block !important;
+        }
+        .cb-toggle:not(:checked) + .toggle-input {
+            display: none;
+        }
+        .table-responsive {
+            margin-bottom: 1rem;
+        }
+        .checkbox-input {
+            width: 1rem;
+            height: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="crediti">
+        <p class="crediti">Matteo Maruccia</p>
+    </div>
+
+    <main class="container my-4 mx-auto">
+        <h1 class="text-center mb-2">Le osservazioni del Consiglio di classe</h1>
+        <h2 class="text-center text-muted fs-5 mb-4">(indicare le caratteristiche presenti):</h2>
+
+        <div class="row mb-4">
+            <div class="col">
+                <h3 id="titolo-nome">Nome e Cognome alunno : <input id="titolo-nome" type="text" class="form-control form-control-sm mx-auto"></h3>
+            </div>
+        </div>
+
+        <div class="table-responsive mb-4">
+            <table class="table table-borderless w-100">
+                <tr>
+                    <td>
+                        <h3><u>Partecipazione dell’alunno alle attività didattiche</u></h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>si distrae molto facilmente e necessita di continue sollecitazioni<input type="checkbox"></li>
+                            <li>partecipa solo se coinvolto direttamente<input type="checkbox"></li>
+                            <li>partecipa ed interviene in maniera adeguata<input type="checkbox"></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="table-responsive mb-4">
+            <table class="table table-borderless w-100">
+                <tr>
+                    <td>
+                        <h3><u>Relazionalità con compagni/adulti</u></h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>ha difficoltà a relazionarsi<input type="checkbox"></li>
+                            <li>predilige relazionarsi con i pari solo in piccolo gruppo<input type="checkbox"></li>
+                            <li>predilige relazionarsi solo con i docenti<input type="checkbox"></li>
+                            <li>Riesce a relazionarsi senza difficoltà<input type="checkbox"></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="table-responsive mb-4">
+            <table class="table table-borderless w-100">
+                <tr>
+                    <td>
+                        <h3><u>Modalità di gestione delle consegne</u></h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>ricorre all’insegnante per spiegazioni<input type="checkbox"></li>
+                            <li>ricorre ad un compagno<input type="checkbox"></li>
+                            <li>è autonomo<input type="checkbox"></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="table-responsive mb-4">
+            <table class="table table-borderless w-100">
+                <tr>
+                    <td>
+                        <h3><u>Capacità di memorizzare procedure operative</u></h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>ha notevoli difficoltà nella memorizzazione<input type="checkbox"></li>
+                            <li>ha difficoltà solo in alcune materie (specificare quali):
+                                <input type="checkbox" class="cb-toggle" data-target="input-materie">
+                                <input type="text" class="toggle-input" data-target="input-materie" disabled>
+                                
+                            </li>
+                            <li>utilizza prevalentemente la memoria visiva<input type="checkbox"></li>
+                            <li>memorizza con facilità<input type="checkbox"></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="text-center mt-4">
+            <button id="pdfBtn" onclick="scaricaPDF()" class="btn btn-primary btn-lg">Scarica o stampa PDF</button>
+        </div>
+
+    </main>
+
+    <footer></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./../js/script.js"></script>
+</body>
+</html>
