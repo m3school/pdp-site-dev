@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Modello PDP Firme Docenti</title>
+        <!-- Bootstrap 5 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Optional: Keep original styles if needed -->
+        <link rel="stylesheet" href="./../stili/styles.css">
+        <style>
+            /* Custom styles to maintain original look where needed */
+            .toggle-input {
+                width: 200px;
+                margin-top: 5px;
+                display: inline-block;
+            }
+            .cb-toggle:checked + .toggle-input {
+                display: inline-block !important;
+            }
+            .cb-toggle:not(:checked) + .toggle-input {
+                display: none;
+            }
+            .table-responsive {
+                margin-bottom: 1rem;
+            }
+            .checkbox-input {
+                width: 1rem;
+                height: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="crediti">
+            <p class="crediti">Matteo Maruccia</p>
+        </div>
+        
+        <main class="container mt-4">
+            <p>Il presente Piano Didattico Personalizzato è stato sottoscritto per la scuola da:</p>
+
+                    <table class="table table-bordered tabella-con-righe-e-colonne w-100 mb-4">
+            <tr>
+                <td><b>NOME INSEGNANTE</b></td>
+                <td><b>MATERIA</b></td>
+                <td><b>FIRMA</b></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td></td>
+            </tr>
+        </table>
+        <p style="font-weight: bold; text-align: end; padding-right: 20px;">Il Dirigente Scolastico</p>
+        
+        <p style="text-align: end; padding-right: 20px;"></p>
+        
+        <p style="text-align: start; padding-left: 20px;">Documento valido per la durata di un anno approvato dal C.d.C.</p>
+        <p style="text-align: start; padding-left: 20px;">in data </p>
+        <p style="text-align: start; padding-left: 20px;">Consegnato alla famiglia</p>
+        <table class="w-100 mb-4" style="border: none;">
+            <tr>
+                <td style="text-align: start; padding-left: 20px;">in data </td>
+                <td style="text-align: end; padding-right: 20px;">firma del genitore</td>
+            </tr>
+        </table>
+        <br>
+
+            <button id="pdfBtn" onclick="scaricaPDF()" class="btn btn-primary mt-3">Scarica o stampa PDF</button>
+        </main>
+        <footer></footer>
+        <!-- Bootstrap 5 JS Bundle (includes Popper) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./../js/script.js"></script>
+    </body>
+</html>
