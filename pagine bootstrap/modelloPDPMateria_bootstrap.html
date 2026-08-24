@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modello PDP BES NAI</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional: Keep original styles if needed -->
+    <link rel="stylesheet" href="./../stili/styles.css">
+    <style>
+        /* Custom styles to maintain original look where needed */
+        .toggle-input {
+            width: 200px;
+            margin-top: 5px;
+            display: inline-block;
+        }
+        .cb-toggle:checked + .toggle-input {
+            display: inline-block !important;
+        }
+        .cb-toggle:not(:checked) + .toggle-input {
+            display: none;
+        }
+        .table-responsive {
+            margin-bottom: 1rem;
+        }
+        .checkbox-input {
+            width: 1rem;
+            height: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="crediti">
+        <p class="crediti">Matteo Maruccia</p>
+    </div>
+
+    <main class="container mx-auto">
+        <br>
+        <div class="row mb-4">
+            <div class="col">
+                <h3 id="titolo-materia">MATERIA: <input id="materia" type="text" class="form-control form-control-sm mx-auto"></h3>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col">
+                <h3 id="titolo-docente">Docente: <input id="docente" type="text" class="form-control form-control-sm mx-auto"></h3>
+            </div>
+        </div>
+        
+
+        <div class="page-break"></div>
+       
+        <br>
+        <h4 class="text-center mb-4"><u>OBBIETTIVI E CONTENUTI DI APPRENDIMENTO PER L'ANNO SCOLASTICO</u></h4>
+
+        <textarea class="form-control" rows="5"></textarea>
+        <br>
+
+        <p><b><u>STRATEGIE METODOLOGICHE E DIDATTICHE</u></b></p>
+        <p>(crocettare le voci che interessano)</p>
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered tabella-con-righe w-100">
+                        <tr>
+                            <td>Spiegazione supportate da strumenti multimediali (LIM, ... che lo studente può caricare su chiavetta USB</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Uso di caratteri in stampato maiuscolo durante le spiegazioni alla lavagna</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Utilizzo smartpen</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Contenuti presentati in piccole unità o nuclei tematici semplificati</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Testo delle prove di verifica presentato con un carattere di stampa secondo indicazioni ministeriali</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Utilizzo durante le prove di verifica degli strumenti compensativi e dispensativi concordati con docente</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                    </table>
+                </div>
+
+        <br>
+
+        <p><b><u>STRUMENTI COMPENSATIVI</u></b></p>
+        <p>(crocettare le voci che interessano)</p>
+                <div class="table-responsive mb-4"> 
+
+                    <table class="table table-bordered tabella-con-righe w-100">
+                        <tr>
+                            <td>Tabelle, formulari, sintesi, schemi, mappe delle unità di apprendimento formulati dallo studente</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Calcolatrice</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Risorse audio (sintesi vocali, audiolibri, libri digitali)</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Programmi di video scrittura con correttore ortografico</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>LIM</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Tempi più lunghi per consegna compiti</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Dizionari digitali</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Altro (specificare) <input type="text" class="toggle-input form-control form-control-sm" data-target="strumentiAltro" disabled></td>
+                            <td><input type="checkbox" class="cb-toggle checkbox-input" data-target="strumentiAltro"></td>
+                        </tr>
+                    </table>
+                </div>
+
+        <div class="page-break"></div>        
+        
+        <br>
+
+        <p><b><u>STRUMENTI DISPENSATIVI</u></b></p>
+        <p>(crocettare le voci che interessano)</p>
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered tabella-con-righe w-100">
+                        <tr>
+                            <td>Leggere ad alta voce</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Scrivere sotto dettatura</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Prendere appunti</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Copiare dalla lavagna</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Usare il dizionario cartaceo</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Studiare in modo mnemonico formule, tabelle definizioni</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                    </table>
+                </div>
+        
+        <br>
+
+        <p><b><u>MODALITÀ DI VERIFICA E VALUTAZIONE</u></b></p>
+        <p>(crocettare le voci che interessano)</p>
+        <p>Si concordano:</p>
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered tabella-con-righe w-100">
+                        <tr>
+                            <td>Prove scritte ridotte nei contenuti rispetto al resto della classe mantenendo gli obiettivi propri della disciplina</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Organizzazione di interrogazioni programmate</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Introduzione di prove informatizzate</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Compensazione con prove orali di compiti scritti</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Uso di mediatori didattici (mappe, tabelle, formulari, immagini, ...) nelle prove sia scritte sia orali preventivamente verificati dal docente</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Valutazioni più attente ai contenuti che non alla forma</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                    </table>
+                </div>
+        
+        <br>
+
+        <p><b><u>RAPPORTI SCUOLA FAMIGLIA</u></b></p>
+        <p>(crocettare le voci che interessano)</p>
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered tabella-con-righe w-100">
+                        <tr>
+                            <td>Registro elettronico</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Colloquio settimanale</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Colloqui periodici</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                        <tr>
+                            <td>In caso di presenza di un tutor esterno, eventuali contatti col docente per fornire indicazioni sulle attività da svolgere</td>
+                            <td><input type="checkbox" class="checkbox-input"></td>
+                        </tr>
+                    </table>
+                </div>
+                
+        <button id="pdfBtn" onclick="scaricaPDF()" class="btn btn-primary mt-3">Scarica o stampa PDF</button>
+    </main>
+    <footer></footer>
+    <!-- Bootstrap 5 JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./../js/script.js"></script>
+</body>
+</html>
